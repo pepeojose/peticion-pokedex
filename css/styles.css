@@ -1,0 +1,197 @@
+:root {
+    --dark-cyan: hsl(185, 75%, 39%);
+    --text-gray: hsl(0, 0%, 59%);
+    --circle-blue: hsl(185, 75%, 41%);
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark-cyan);
+}
+
+img {
+    max-width: 100%;
+}
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.button-reload,
+.button-select {
+    position: fixed;
+    left: 50vw;
+    transform: translateX(-50%);
+    padding: 1rem;
+    border: none;
+    background-color: hsl(214, 67%, 30%);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+    z-index: 20;
+}
+
+.button-reload {
+    top: 20px;
+}
+
+.button-select {
+    top: 80px;
+}
+
+.button-reload:hover,
+.button-select:hover {
+    cursor: pointer;
+}
+
+.main-container {
+    height: 100vh;
+    background-color: var(--dark-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container::after,
+.main-container::before {
+    content: '';
+    position: fixed;
+    display: block;
+    background-color: var(--circle-blue);
+    border-radius: 50%;
+    width: 100vmin;
+    height: 100vmin;
+}
+
+.main-container::before {
+    top: -400px;
+    left: -400px;
+}
+
+.main-container::after {
+    bottom: -400px;
+    right: -400px;
+}
+
+.card {
+    position: relative;
+    width: 405px;
+    height: 550px;
+    border-radius: 25px;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.card__header {
+    height: 40%;
+    border-radius: 25px 25px 0 0;
+    background-color: hsl(214, 67%, 62%);
+    background-image: url(../img/bg-pattern-card.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card__image {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 170px;
+    border-radius: 5px;
+    border: 5px solid #ccc;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.card__pokemon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .3rem;
+    width: 150px;
+    height: 150px;
+}
+
+.card__text {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.card__name {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.card__hp,
+.card__experience {
+    font-weight: lighter;
+    color: var(--text-gray);
+}
+
+.card__experience {
+    font-size: 1.2rem;
+}
+
+.card__properties {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #ccc;
+    margin-top: 3rem;
+}
+
+.card__number,
+.card__property {
+    text-align: center;
+}
+
+.card__number {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.card__property {
+    margin-top: 0;
+    color: var(--text-gray);
+}
+
+@media (max-width:801px) {
+    .main-container::before {
+        top: -300px;
+        left: -300px;
+    }
+    .main-container::after {
+        bottom: -300px;
+        right: -300px;
+    }
+    .card {
+        width: 340px;
+    }
+}
+
+@media (max-width:415px) {
+    .main {
+        display: block;
+    }
+    .main-container::before,
+    .main-container::after {
+        width: 200vmin;
+        height: 200vmin;
+    }
+    .main-container::before {
+        top: -480px;
+        left: -480px;
+    }
+    .main-container::after {
+        bottom: -480px;
+        right: -480px;
+    }
+    .card {
+        width: 80%;
+    }
+}

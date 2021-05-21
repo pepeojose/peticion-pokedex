@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main id="main" class="main">
+        <button id="select" class="button-select">Caza tu Pokemon</button>
+        <button id="reload" class="button-reload">Borrar</button>
+    </main>
+    <template id="template-card">
+        <div class="main-container">
+            <article class="card">
+                <header class="card__header">
+                    <div class="card__image">
+                        <img src="./img/face.jpg" class="card__pokemon" id="image-pokemon" alt="Imagen de un Pokemon">
+                    </div>
+                </header>
+                <main>
+                    <section class="card__text">
+                        <h1 class="card__name" id="card-name"><span class="card__hp"></span></h1>
+                        <p class="card__experience" id="experience"></p>
+                    </section>
+                    <footer class="card__properties">
+                        <div>
+                            <p class="card__number" id=""></p>
+                            <p class="card__property">Ataque</p>
+                        </div>
+                        <div>
+                            <p class="card__number"></p>
+                            <p class="card__property">Especial</p>
+                        </div>
+                        <div>
+                            <p class="card__number"></p>
+                            <p class="card__property">Defensa</p>
+                        </div>
+                    </footer>
+                </main>
+            </article>
+        </div>
+    </template>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
